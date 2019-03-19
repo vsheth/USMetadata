@@ -16,6 +16,7 @@ import ckan.lib.plugins
 import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins as p
+import ckan.plugins.toolkit as toolkit
 import db_utils
 from ckan.common import _, json, request, c, g, response
 from ckan.lib.base import BaseController
