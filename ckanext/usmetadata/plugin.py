@@ -22,7 +22,7 @@ from ckan.lib.base import BaseController
 
 render = base.render
 abort = base.abort
-redirect = base.redirect_to
+redirect = toolkit.redirect_to
 
 NotFound = logic.NotFound
 NotAuthorized = logic.NotAuthorized
@@ -41,7 +41,7 @@ import ckan.lib.helpers as h
 # ITemplateHelpers, IDatasetForm, IPackageController
 # from formencode.validators import validators
 
-redirect = base.redirect_to
+redirect = toolkit.redirect_to
 log = getLogger(__name__)
 
 URL_REGEX = re.compile(
