@@ -17,6 +17,9 @@ import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins as p
 import ckan.plugins.toolkit as toolkit
+
+import webhelpers.text as whtext
+
 import db_utils
 from ckan.common import _, json, request, c, g, response
 from ckan.lib.base import BaseController
@@ -617,7 +620,7 @@ class CommonCoreMetadataFormPlugin(p.SingletonPlugin, p.toolkit.DefaultDatasetFo
     def usmetadata_shorten(cls, plain=None, extract_length=180):
         if not extract_length or len(plain) < extract_length:
             return plain
-        return unicode(h.truncate(plain, length=extract_length, indicator='...', whole_word=True))
+        return unicode(whtext.truncate(plain, length=extract_length, indicator='...', whole_word=True))
 
     @classmethod
     def resource_redacted_icon(cls, package, resource, field):
